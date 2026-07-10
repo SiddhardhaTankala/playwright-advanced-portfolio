@@ -6,10 +6,10 @@
 4. Open Terminal > enter command
     npm init playwright@latest
 5. When the installer runs, answer the prompts in your terminal like this:
-    Do you want to use TypeScript or JavaScript? * Select TypeScript (Press Enter).
-    Where do you want to put your end-to-end tests? * Type specs and press Enter.
-    Add a GitHub Actions workflow? * Press Y and then Enter.
-    Install Playwright browsers (can take a couple of minutes)? * Press Y and then Enter.
+    - Do you want to use TypeScript or JavaScript? * Select TypeScript (Press Enter).
+    - Where do you want to put your end-to-end tests? * Type specs and press Enter.
+    - Add a GitHub Actions workflow? * Press Y and then Enter.
+    -Install Playwright browsers (can take a couple of minutes)? * Press Y and then Enter.
 6. Create Project folders manually or with the below command
     mkdir -p data lib pages specs/ui specs/api utils
         this instanly creates folders data, lib, pages, specs/ui, specs/api, utils
@@ -27,5 +27,5 @@
     ├── package.json
     └── package-lock.json
 
-8. Installation of Cord Project Dependencies (XLSX, CSV, DOTENV):
+8. Installation of Core Project Dependencies (XLSX, CSV, .ENV):
     npm install xlsx csv-parse dotenv
