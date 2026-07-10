@@ -1,4 +1,4 @@
-import {Page, Locator} from '@playwright/test',
+import {Page, Locator} from '@playwright/test';
 
 export abstract class BasePage {            //Abstract class to be extended by all page objects
 

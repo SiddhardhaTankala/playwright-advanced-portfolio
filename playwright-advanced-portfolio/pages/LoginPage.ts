@@ -16,10 +16,10 @@ export class LoginPage extends BasePage {  //LoginPage class that extends the Ba
         /**
          * Action Workflow: Navigates to login page and executes the sign-in sequence 
          */
-        this.emailInput = this.page.locator('[data-test='email']');  //Initialize the email input locator
-        this.passwordInput = this.page.locator('[data-test='password']');  //Initialize the password input locator
-        this.loginButton = this.page.locator('[data-test='login-submit']');  //Initialize the login button locator
-        this.errorMessage = this.page.locator('[data-test='login-error']');  //Initialize the error message locator
+        this.emailInput = this.page.locator("[data-test='email']");  //Initialize the email input locator
+        this.passwordInput = this.page.locator("[data-test='password']");  //Initialize the password input locator
+        this.loginButton = this.page.locator("[data-test='login-submit']");  //Initialize the login button locator
+        this.errorMessage = this.page.locator("[data-test='login-error']");  //Initialize the error message locator
     
     }
 
