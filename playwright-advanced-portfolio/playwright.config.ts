@@ -33,7 +33,7 @@ export default defineConfig({
   use: {
     //Read the base URL from the environment variable BASE_URL, or default to 'http://localhost:3000' if not set.
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
-
+    
     //save crucial debugging information only when test fails, to avoid cluttering the test results with unnecessary data.
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
