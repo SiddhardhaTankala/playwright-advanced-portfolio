@@ -24,5 +24,27 @@ export class APIClient {
         return response;
     }
 
+    /**
+     * Authentication via API and returns the access token directly
+     */
+
+    public async getAuthToken(email: string, password: string): Promise<string> {
+        const apiUrl = process.env.API_URL;
+        const payload = {
+            email: email,
+            password: password
+        };
+
+        const response = await this.post(`${apiUrl}/users/login`, JSON.stringify(payload));
+
+        if (!response.ok()) {
+            throw new Error(`API authentication failed with status code ${response.status()}`);
+
+        }
+        const body = await response.json();
+
+        return body.access_token;
+
+    }
 
 };
