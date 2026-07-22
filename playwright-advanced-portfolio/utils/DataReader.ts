@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import {parse} from 'csv-parse/sync';
+import * as XLSX from 'xlsx';
+
 
 export class DataReader {
     /**
@@ -25,5 +27,23 @@ export class DataReader {
 
     };
 
+    /**
+     * Reads (.xlsx) files from /data directory
+     */
+
+    public static getExcelData<T>(fileName: string, sheetName?: string): T[] {
+
+        //Resolve the absolute file path dynamically
+        const filePath = path.resolve(__dirname, '../data', fileName);
+        const workbook = XLSX.readFile(filePath);
+
+        // Use specified sheet, or default to the first sheet
+        const targetSheetName = sheetName || workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[targetSheetName];
+
+        //convert rows to JSON objects
+        return XLSX.utils.sheet_to_json<T>(worksheet);
+
+    }
 
 };

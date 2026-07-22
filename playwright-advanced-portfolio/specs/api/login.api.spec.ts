@@ -33,14 +33,10 @@ test.describe("Authentication - API Validation", () => {
             // 4. Validate the response status code (401 means Unauthorized)
             expect(response.status()).toBe(401);
 
-            // 6. Parse and assert on the body text message
+            // 5. Parse the body text to ensuer it sends the correct structural message
             const responseBody = await response.json();
-            console.log(`API Error Response for case #${index + 1}:`, responseBody);
-            
-            // Note: If the backend uses 'message', switch this to responseBody.message
-            // Common API responses use 'Unauthorized' or 'Invalid credentials'
-            const errorMessage = responseBody.error || responseBody.message || '';
-            expect(errorMessage.toLowerCase()).toContain('invalid');
+            console.log('API Error Response: ', responseBody);
+            expect(responseBody.error).toContain('Invalid login request');
             
 
         });
